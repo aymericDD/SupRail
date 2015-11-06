@@ -9,21 +9,27 @@ import com.supinfo.suprails.dao.CustomerOrderDao;
 import com.supinfo.suprails.entity.CustomerOrder;
 import javax.ejb.Asynchronous;
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Rico
  */
+@Stateless
 public class CustomerOrderService {
     
     @EJB
     private CustomerOrderDao customerOrderDao;
+    
+    @EJB
+    private PrinterService printerService;
     
     @Asynchronous
     public void processCustomerOrder(CustomerOrder customerOrder) {
         if (customerOrder != null) {
             customerOrderDao.addCustomerOrder(customerOrder);
             System.out.println("Send mail");
+            printerService.print(customerOrder);
         }
     }
     

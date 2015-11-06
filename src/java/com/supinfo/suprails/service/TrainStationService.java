@@ -16,7 +16,6 @@ public class TrainStationService {
     @EJB
     private TrainStationDao trainStationDao;
     
-    
     public void addTrainStation(TrainStation station) {
         trainStationDao.addTrainStation(station);
     }
@@ -27,6 +26,10 @@ public class TrainStationService {
 
     public TrainStation findTrainStationById(Long departureId) {
         return trainStationDao.findTrainStationById(departureId);
+    }
+    
+    public void removeTrainStationById(Long trainStationId) {
+        trainStationDao.removeTrainStation(trainStationId);
     }
     
 }

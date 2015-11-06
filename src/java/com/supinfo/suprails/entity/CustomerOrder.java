@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -22,6 +23,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author Rico
  */
 @Entity
+@XmlRootElement
 public class CustomerOrder implements Serializable {
     private static final long serialVersionUID = 1L;
     

@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -23,6 +24,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@XmlRootElement
 public abstract class Train implements Serializable {
     private static final long serialVersionUID = 1L;
     

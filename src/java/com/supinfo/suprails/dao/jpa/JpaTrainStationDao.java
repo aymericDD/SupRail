@@ -33,5 +33,10 @@ public class JpaTrainStationDao implements TrainStationDao {
     public TrainStation findTrainStationById(Long departureId) {
         return em.find(TrainStation.class, departureId);
     }
+
+    @Override
+    public void removeTrainStation(Long id) {
+        em.remove(em.find(TrainStation.class, id));
+    }
     
 }

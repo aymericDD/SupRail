@@ -17,4 +17,6 @@ public interface TrainStationDao {
 
     TrainStation findTrainStationById(Long departureId);
     
+    void removeTrainStation(Long id);
+    
 }
